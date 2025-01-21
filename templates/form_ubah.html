@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Kontrol</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/AdminLTE.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style_form_input.css')}}">
+    <!-- Font Awesome Free -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+  </head>
+<body>
+    <header class="header">
+        <h1>Form Kontrol</h1>
+    </header>
+
+    <div class="container">
+        <nav class="sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="/">Barang</a></li>
+                <li><a href="/data_stok/">Data Stock</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h2>Form Ubah Data Barang</h2>
+            </div>
+
+            <div class="form-container">
+              <!-- Satu form utama dengan atribut action dan method -->
+                <form action="{{ url_for('proses_ubah')}}" method="POST" class="row g-4">
+                    {% for row in hasil %}
+                        <!-- Kode Barang -->
+                        <div class="col-md-6">
+                            <label for="kodeBarang" class="form-label">Kode Barang</label>
+                            <input type="text" id="kodeBarang" name="kode_barang" class="form-control" 
+                            style="background-color: #d4d4d4;" value="{{row.0}}" readonly>
+                        </div>
+                
+                        <!-- QTY -->
+                        <div class="col-md-6">
+                            <label for="qty" class="form-label">QTY</label>
+                            <input type="text" id="qty" name="qty" value="{{row.6}}" class="form-control">
+                        </div>
+                
+                        <!-- Nama Barang -->
+                        <div class="col-md-6 mt-3">
+                            <label for="namaBarang" class="form-label">Nama Barang</label>
+                            <input type="hidden" name="kode_ori" value="{{ row.0 }}">
+                            <input type="text" id="namaBarang" name="nama_barang" value="{{row.1}}" class="form-control">
+                        </div>
+                
+                        <!-- Harga Beli -->
+                        <div class="col-md-6 mt-3">
+                            <label for="hargaBeli" class="form-label">Harga Beli</label>
+                            <input type="text" id="hargaBeli" name="harga_beli" value="{{row.4}}" class="form-control">
+                        </div>
+                
+                        <!-- Kategori Barang -->
+                        <div class="col-md-6 mt-3">
+                            <label for="kategoriBarang" class="form-label">Kategori Barang</label>
+                            <select class="form-select" aria-label="Default select example" name="unit" id="kategoriBarang">
+                                <option>Smartphone</option>
+                                <option>Case</option>
+                                <option>Charger</option>
+                                <option>Tempered Glass</option>
+                            </select>
+                        </div>
+                
+                        <!-- Harga Jual -->
+                        <div class="col-md-6 mt-3">
+                            <label for="hargaJual" class="form-label">Harga Jual</label>
+                            <input type="text" id="hargaJual" name="harga_jual" value="{{row.5}}" class="form-control">
+                        </div>
+
+                        <!-- Type --> 
+                        <div class="col-md-6 mt-3">
+                            <label for="Type" class="form-label">Type Barang</label>
+                            <select class="form-select" aria-label="Default select example" name="type" id="Type">
+                                <option>Samsung</option>
+                                <option>Xiaomi</option>
+                                <option>Oppo</option>
+                                <option>Vivo</option>
+                                <option>Iphone</option>
+                            </select>
+                        </div>  
+                
+                        <!-- Tombol Aksi -->
+                        <div class="button-group mt-4">
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="button" class="btn btn-secondary" onclick="window.history.back();">Batal</button>
+                        </div>
+                    {% endfor %}
+                </form>
+            </div>
+          
+        </main>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/adminlte.min.js')}}"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+.text-link {
+    color: white;
+    transition: color 0.3s ease; /* Transisi untuk efek halus */
+}
+
+.text-link:hover {
+    color: #00bbff; /* Warna ketika hover */
+    text-decoration: none; /* Tambahkan garis bawah (opsional) */
+}
+
+.dropdwn-items li a {
+    color: #616161; /* Warna sesuai keinginan Anda */
+    transition: color 0.3s ease; /* Transisi untuk efek halus */
+}
+
+.dropdwn-items li a:hover {
+    color: #00bbff; /* Warna ketika hover */
+}
+
+.text-footer h5 {
+    margin-bottom: 22px;
+}
+
+.text-footer p {
+    color: #333333;
+}
+
+.text-link-footer {
+    color: #333333;
+    text-decoration: none;
+    list-style-type: none;
+    transition: color 0.3s ease;
+}
+
+.text-link-footer:hover {
+    color: #00bbff;
+}
+
+.categ {
+    display: flex;
+    gap: 50px;
+}
+
+.categ-box {
+    width: 200px;
+    height: 260px;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: rgba(244, 244, 244, 0.555);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categ-box img {
+    width: 100%; /* Sesuaikan ukuran gambar */
+    height: auto;
+    transition: transform 0.6s ease; /* Efek halus untuk gambar */
+}
+
+.categ-box:hover {
+    transition: transform 0.4s ease;
+    transform: translateY(-6px); /* Naikkan box */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+}
+
+.categ-box:hover img {
+    transform: scale(1.1); /* Perbesar gambar saat hover */
+}
+
+.categ-box p {
+    margin-top: 15px;
+    color: #616161;
+    transition: none; /* Teks tidak terpengaruh efek hover */
+}
+
+.social-container {
+    display: flex;
+    gap: 8px;
+}
+
+.social-icon {
+    display: inline-flex; /* Flexbox untuk elemen inline */
+    justify-content: center; /* Horizontal center */
+    align-items: center; /* Vertical center */
+    width: 28px; /* Ukuran kotak yang lebih besar */
+    height: 28px; /* Sama dengan lebar untuk membuatnya persegi */
+    border-radius: 4px;
+    color: white;
+    background-color: black;
+    font-size: 16px; /* Ukuran ikon */
+    line-height: 0;
+    padding: 0;
+}
+
+
