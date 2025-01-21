@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.header {
+    background-color: #000;
+    color: white;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Override Bootstrap container */
+.container {
+    display: flex;
+    min-height: 100vh;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+    padding-top: 54px; /* Height of header */
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #444;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 54px; /* Height of header */
+    bottom: 0;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 15px;
+}
+
+.sidebar-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 200px; /* Width of sidebar */
+    padding: 20px;
+    background-color: #fff;
+}
+
+.content-header {
+    margin-bottom: 20px;
+}
